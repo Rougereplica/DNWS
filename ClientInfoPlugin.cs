@@ -10,15 +10,23 @@ namespace DNWS
 
   public class ClientInfoPlugin : IPlugin
   {
+     public sealed class HttpRequest { };
+     public string UserHostAddress { get; }
+
     public HTTPResponse GetResponse(HTTPRequest request)
     {
       StringBuilder sb = new StringBuilder();
 
       string[] client_endpoint = request.getPropertyByKey("RemoteEndPoint").Split(':');
+      
       string val;
+
+
       sb.Append("<html><body>");
+           
+      sb.Append("Client IP: ").Append(client_endpoint[0]).Append("<br />\n");
       sb.Append("Client Port: ").Append(client_endpoint[1]).Append("<br />\n");
-      if ((val = request.getPropertyByKey("user-agent")) != null)
+      if ((val = request.getPropertyByKey("User-agent")) != null)
       {
         sb.Append("Browser Information: ").Append(val).Append("<br />\n");
       }

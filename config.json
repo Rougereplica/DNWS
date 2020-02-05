@@ -12,6 +12,13 @@
             "Postprocessing" : "false" ,
             "Singleton" : "false"
         },
+		{
+		    "Path" : "clientinfo",
+            "Class" : "DNWS.ClientInfoPlugin",
+            "Preprocessing" : "false",
+            "Postprocessing" :"false" 
+		
+		},
         {
             "Path" : "ox",
             "Class" : "DNWS.OXPlugin",
@@ -29,6 +36,6 @@
             "Class" : "DNWS.TwitterPlugin",
             "Preprocessing" : "false",
             "Postprocessing" :"false" 
-        }
+        }		
     ]
 }
